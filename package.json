@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "hellojs": "^1.16.1",
+    "node-sass": "^4.7.2",
     "parcel-bundler": "^1.6.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "bulma": "^0.6.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html"
