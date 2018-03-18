@@ -1,15 +1,30 @@
 ﻿require('bulma');
+const GITHUB = require('./config').GITHUB;
+
 const hello = require('hellojs');
 
-const client_id = '01dc9f362f800af8f4b4';
 
 
 
 hello.init({
-    github: '01dc9f362f800af8f4b4'
+    github: GITHUB.CLIENT_ID
 });
 
+
+if (hello('github').getAuthResponse())
+{
+    hello('github').api('/me')
+    .then(function (userProfile) {
+
+            renderUserDetails(userProfile);
+
+        });
+
+}
+
 var buttonLog = document.querySelector('#log');
+const $buttonLogOut = document.querySelector('#logOut');
+
 buttonLog.addEventListener('click', (evt) => {
     evt.preventDefault();
 
@@ -24,18 +39,26 @@ buttonLog.addEventListener('click', (evt) => {
         });
 });
 
-var buttonLogOut = document.querySelector('#logOut');
+
+$buttonLogOut.addEventListener('click', (evt) => {
+    console.log('logged out!!!!!');
+
+    hello.logout('github')
+        .then(() => location.reload());
+
+
+});
 
 
 function renderUserDetails(userProfile) {
 
-    const template = `<div class="navbar-item">
-                ${userProfile.login}
-                <img src="${userProfile.avatar_url}" alt="avatar"/>
-            </div>`;
+    const template = `
+                        ${userProfile.login}
+                        <img src="${userProfile.avatar_url}" alt="avatar"/>
+                       `;
 
-    var user = document.querySelector('#bar');
-    user.innerHTML+= template;
+    var userData = document.querySelector('#userData');
+    userData.innerHTML= template;
 
     console.log(template);
 };

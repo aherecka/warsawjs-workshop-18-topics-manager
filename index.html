@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl-PL">
 <head>
+    <meta charset="UTF-8">
     <title>Topis</title>
 </head>
 <body>
-    
+
     <section class="section">
         <h1 class="title is-3">WarsawJs Workshop #18: Topis Manager</h1>
 
@@ -16,13 +17,118 @@
             <div class="navbar-item">
                 <button id="logOut" class="button is-danger">Wyloguj</button>
             </div>
+            <div class="navbar-item" id="userData">
 
-
+            </div>
 
 
         </div>
 
-</section>
+    </section>
+
+    <section class="section">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <article class="message">
+                    <div class="message-header">
+                        <p>Zg³oœ propozycjê warsztatów</p>
+                    </div>
+                    <div class="message-body">
+                        <form action="" class="js-form-add-topic">
+                            <div class="field">
+                                <label class="label">
+                                    <sup class="has-text-danger">*</sup> Temat
+                                </label>
+                                <div class="control">
+                                    <input class="input" type="text" name="topic" required />
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">
+                                    <sup class="has-text-danger">*</sup> Opis
+                                </label>
+                                <div class="control">
+                                    <textarea class="textarea" name="description" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button class="button is-link">Przeœlij</button>
+                                </div>
+                                <div class="control">
+                                    <button class="button is-text" type="reset">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1 class="title is-3">Zg³oszone tematy</h1>
+        <div class="columns is-multiline">
+
+            <div class="column is-3">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            "Temat nr. 1"
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Opis tematu...
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Zag³osuj</a>
+                        <a href="#" class="card-footer-item">Chcê byæ trenerem</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            "Temat nr. 1"
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Opis tematu...
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Zag³osuj</a>
+                        <a href="#" class="card-footer-item">Chcê byæ trenerem</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            "Temat nr. 1"
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            Opis tematu...
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Zag³osuj</a>
+                        <a href="#" class="card-footer-item">Chcê byæ trenerem</a>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <script src="scripts/main.js"></script>
 
